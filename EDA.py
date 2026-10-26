@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, datediff, to_timestamp, desc
+import os
 
 # Initialize the SparkSession
 spark = SparkSession.builder \
@@ -11,8 +12,10 @@ spark.sparkContext.setLogLevel("WARN")
 
 
 # Load the datasets
-nyc_df = spark.read.csv("/Users/jaime/Desktop/CS236/nyc_311_800k.csv", header=True, inferSchema=True)
-la_df = spark.read.csv("/Users/jaime/Desktop/CS236/la_311_800k.csv", header=True, inferSchema=True)
+script_dir = os.path.dirname(os.path.abspath('EDA.py'))
+
+nyc_df = spark.read.csv(os.path.join(script_dir, '..', 'Data', 'nyc_311_800k.csv'), header=True, inferSchema=True)
+la_df = spark.read.csv(os.path.join(script_dir, '..', 'Data', 'la_311_800k.csv'), header=True, inferSchema=True)
 
 # Extract schemas as formatted strings using the underlying JVM object
 nyc_schema = nyc_df._jdf.schema().treeString()
