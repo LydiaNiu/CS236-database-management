@@ -1,0 +1,130 @@
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pyspark/python/lib/pyspark.zip/pyspark/testing/utils.py:127: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.
++----------------------------------------+
+|location                                |
++----------------------------------------+
+|POINT (-73.951311964165 40.681521998996)|
+|POINT (-73.937650474583 40.84393828232) |
+|POINT (-73.883344645506 40.873711845871)|
++----------------------------------------+
+only showing top 3 rows
++------------------------------------+
+|location                            |
++------------------------------------+
+|POINT (-118.247306863 34.0685923404)|
+|POINT (-118.504855493 34.2186209825)|
+|POINT (-118.30749357 34.043466446)  |
++------------------------------------+
+only showing top 3 rows
+root
+ |-- uid: string (nullable = false)
+ |-- source: string (nullable = false)
+ |-- id: string (nullable = true)
+ |-- created: timestamp (nullable = true)
+ |-- closed: timestamp (nullable = true)
+ |-- updated_date: timestamp (nullable = true)
+ |-- status: string (nullable = true)
+ |-- status_detail: string (nullable = true)
+ |-- request_type: string (nullable = true)
+ |-- request_type_original: string (nullable = true)
+ |-- channel: string (nullable = true)
+ |-- channel_original: string (nullable = true)
+ |-- zip: string (nullable = true)
+ |-- agency: string (nullable = true)
+ |-- address: string (nullable = true)
+ |-- street_name: string (nullable = true)
+ |-- police_precinct: string (nullable = true)
+ |-- latitude: double (nullable = true)
+ |-- longitude: double (nullable = true)
+ |-- location: string (nullable = true)
+ |-- resolution_hours: double (nullable = true)
+ |-- is_valid_resolution: boolean (nullable = true)
+ |-- is_suspected_duplicate: boolean (nullable = false)
+
++------+---------+------+
+|source|   status| count|
++------+---------+------+
+|    LA|   closed|730126|
+|    LA|cancelled| 34725|
+|    LA|     open| 34053|
+|    LA|    other|  1096|
+|   NYC|   closed|715881|
+|   NYC|     open| 84112|
+|   NYC|     NULL|     7|
++------+---------+------+
+
++------+-------+------+
+|source|channel| count|
++------+-------+------+
+|    LA|  Phone|314676|
+|    LA| Mobile|277390|
+|    LA| Online|129997|
+|    LA|  Other| 77937|
+|   NYC| Online|419261|
+|   NYC|  Phone|163519|
+|   NYC| Mobile|150744|
+|   NYC|   NULL| 65687|
+|   NYC|  Other|   789|
++------+-------+------+
+
++------+--------------------------+------+
+|source|request_type              |count |
++------+--------------------------+------+
+|LA    |Bulky Items               |378124|
+|LA    |Graffiti Removal          |177470|
+|LA    |Metal/Household Appliances|67616 |
+|LA    |Illegal Dumping Pickup    |59582 |
+|LA    |Homeless Encampment       |47660 |
+|LA    |Streetlight Issue         |22350 |
+|LA    |Electronic Waste          |22144 |
+|LA    |Dead Animal Removal       |18146 |
+|LA    |Other                     |5424  |
+|LA    |Report Water Waste        |796   |
+|LA    |Feedback                  |688   |
+|NYC   |Other                     |760274|
+|NYC   |Homeless Encampment       |12431 |
+|NYC   |Illegal Dumping Pickup    |9961  |
+|NYC   |Streetlight Issue         |9830  |
+|NYC   |Graffiti Removal          |3765  |
+|NYC   |Dead Animal Removal       |2756  |
+|NYC   |Report Water Waste        |983   |
++------+--------------------------+------+
+
+-RECORD 0------------------------
+ uid                    | 0      
+ source                 | 0      
+ id                     | 0      
+ created                | 0      
+ closed                 | 120954 
+ updated_date           | 35055  
+ status                 | 7      
+ status_detail          | 7      
+ request_type           | 0      
+ request_type_original  | 0      
+ channel                | 65687  
+ channel_original       | 0      
+ zip                    | 7808   
+ agency                 | 0      
+ address                | 22765  
+ street_name            | 137243 
+ police_precinct        | 15895  
+ latitude               | 15397  
+ longitude              | 15397  
+ location               | 15397  
+ resolution_hours       | 120954 
+ is_valid_resolution    | 0      
+ is_suspected_duplicate | 0      
+
+Unified dataset successfully validated and saved to Parquet.
+Unified dataset successfully validated and saved to CSV.
+
+--- Head of Saved CSV (First 5 Rows) ---
++------------+------+--------+-------------------+-------------------+-------------------+------+-------------+----------------+-----------------------+-------+----------------+-----+------+------------------------------+--------------------------+---------------+------------------+------------------+----------------------------------------+------------------+-------------------+----------------------+
+|uid         |source|id      |created            |closed             |updated_date       |status|status_detail|request_type    |request_type_original  |channel|channel_original|zip  |agency|address                       |street_name               |police_precinct|latitude          |longitude         |location                                |resolution_hours  |is_valid_resolution|is_suspected_duplicate|
++------------+------+--------+-------------------+-------------------+-------------------+------+-------------+----------------+-----------------------+-------+----------------+-----+------+------------------------------+--------------------------+---------------+------------------+------------------+----------------------------------------+------------------+-------------------+----------------------+
+|NYC_69801993|NYC   |69801993|2026-07-22 11:55:09|2026-08-05 00:00:00|2026-08-06 06:25:16|closed|Closed       |Graffiti Removal|Graffiti               |NULL   |UNKNOWN         |11216|DSNY  |2 ARLINGTON PLACE             |ARLINGTON PLACE           |Precinct 79    |40.68152199899578 |-73.95131196416479|POINT (-73.951311964165 40.681521998996)|324.0808333333333 |true               |false                 |
+|NYC_69802194|NYC   |69802194|2026-07-22 10:52:49|2026-07-22 15:06:05|2026-07-22 15:06:09|closed|Closed       |Other           |Noise - Residential    |Online |ONLINE          |10032|NYPD  |1252 SAINT NICHOLAS AVENUE    |SAINT NICHOLAS AVENUE     |Precinct 33    |40.84393828232022 |-73.93765047458338|POINT (-73.937650474583 40.84393828232) |4.221111111111111 |true               |false                 |
+|NYC_69802255|NYC   |69802255|2026-07-22 21:44:20|2026-07-22 23:28:00|2026-07-22 23:28:06|closed|Closed       |Other           |Noise - Street/Sidewalk|Online |ONLINE          |10458|NYPD  |200 EAST MOSHOLU PARKWAY SOUTH|EAST MOSHOLU PARKWAY SOUTH|Precinct 52    |40.87371184587149 |-73.8833446455057 |POINT (-73.883344645506 40.873711845871)|1.7277777777777779|true               |false                 |
+|NYC_69802719|NYC   |69802719|2026-07-22 12:50:40|2026-08-05 19:03:05|2026-08-05 19:03:13|closed|Closed       |Other           |Rodent                 |Online |ONLINE          |11222|DOHMH |860 LORIMER STREET            |LORIMER STREET            |Precinct 94    |40.722446349389855|-73.951051175962  |POINT (-73.951051175962 40.72244634939) |342.20694444444445|true               |false                 |
+|NYC_69802874|NYC   |69802874|2026-07-22 20:52:45|2026-07-23 04:17:38|2026-07-23 04:17:45|closed|Closed       |Other           |Illegal Parking        |Mobile |MOBILE          |11385|NYPD  |586 FAIRVIEW AVENUE           |FAIRVIEW AVENUE           |Precinct 104   |40.70746583971218 |-73.90713786987429|POINT (-73.907137869874 40.707465839712)|7.414722222222222 |true               |false                 |
++------------+------+--------+-------------------+-------------------+-------------------+------+-------------+----------------+-----------------------+-------+----------------+-----+------+------------------------------+--------------------------+---------------+------------------+------------------+----------------------------------------+------------------+-------------------+----------------------+
+only showing top 5 rows
