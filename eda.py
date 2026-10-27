@@ -12,7 +12,7 @@ spark.sparkContext.setLogLevel("WARN")
 
 
 # Load the datasets
-script_dir = os.path.dirname(os.path.abspath('EDA.py'))
+script_dir = os.path.dirname(os.path.abspath('eda.py'))
 
 nyc_df = spark.read.csv(os.path.join(script_dir, '..', 'Data', 'nyc_311_800k.csv'), header=True, inferSchema=True)
 la_df = spark.read.csv(os.path.join(script_dir, '..', 'Data', 'la_311_800k.csv'), header=True, inferSchema=True)
