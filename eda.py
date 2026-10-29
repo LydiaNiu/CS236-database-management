@@ -35,11 +35,11 @@ nyc_head = nyc_df._jdf.showString(15, 20, False)
 la_head = la_df._jdf.showString(15, 20, False)
 
 # Write the rows to a text file
-with open("head.txt", "w") as file:
-    file.write("NYC 311 First 15 Rows\n")
-    file.write(nyc_head)
-    file.write("\nLA MyLA311 First 15 Rows\n")
-    file.write(la_head)
+# with open("head.txt", "w") as file:
+#     file.write("NYC 311 First 15 Rows\n")
+#     file.write(nyc_head)
+#     file.write("\nLA MyLA311 First 15 Rows\n")
+#     file.write(la_head)
 
 from pyspark.sql import functions as F
 

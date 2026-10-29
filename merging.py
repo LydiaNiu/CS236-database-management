@@ -6,8 +6,8 @@ spark = SparkSession.builder.appName("CS236_Merging").getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
 # Cleaned datasets saved at the end of data_cleaning.ipynb
-nyc = spark.read.parquet("data/nyc_cleaned.parquet")
-la = spark.read.parquet("data/la_cleaned.parquet")
+nyc = spark.read.parquet("new_data/nyc_cleaned.parquet")
+la = spark.read.parquet("new_data/la_cleaned.parquet")
 
 # Making sure the counts for each dataset are valid
 assert nyc.count() == la.count() == 800000
@@ -32,7 +32,7 @@ def map_values(col, mapping, default=None):
     return F.when(col.isNull(), F.lit(None).cast("string")).otherwise(mapped)
 
 
-# Create a source column to distringuish between cities
+# Create a source column to distinguisrh between cities
 add_column("source", F.lit("NYC"), F.lit("LA"))
 
 # `id` from NYC's `unique_key` and LA's `srnumber`
@@ -257,14 +257,14 @@ unified.select(
 ).show(vertical=True)
 
 #  Save and verify Parquet
-unified.write.mode("overwrite").parquet("data/unified.parquet")
-saved_parquet = spark.read.parquet("data/unified.parquet")
+unified.write.mode("overwrite").parquet("new_data/unified.parquet")
+saved_parquet = spark.read.parquet("new_data/unified.parquet")
 assert saved_parquet.count() == 1600000 and sorted(saved_parquet.dtypes) == sorted(unified.dtypes)
 print("Unified dataset successfully validated and saved to Parquet.")
 
 # Save and verify CSV (coalesced into a single CSV file)
-unified.coalesce(1).write.mode("overwrite").option("header", "true").csv("data/unified.csv")
-saved_csv = spark.read.csv("data/unified.csv", header=True, inferSchema=True)
+unified.coalesce(1).write.mode("overwrite").option("header", "true").csv("new_data/unified.csv")
+saved_csv = spark.read.csv("new_data/unified.csv", header=True, inferSchema=True)
 assert saved_csv.count() == 1600000
 print("Unified dataset successfully validated and saved to CSV.")
 
