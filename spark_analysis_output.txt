@@ -1,0 +1,237 @@
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pyspark/python/lib/pyspark.zip/pyspark/testing/utils.py:127: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.
+Requests per period, by city
++------+----+-----+------+--------+
+|source|year|month|period|requests|
++------+----+-----+------+--------+
+|    LA|2024|    1|     1|   28614|
+|    LA|2024|    1|     2|   28527|
+|    LA|2024|    1|     3|   27527|
+|    LA|2024|    1|     4|   40147|
+|    LA|2024|    2|     1|   18873|
+|    LA|2024|    2|     2|   24485|
+|    LA|2024|    2|     3|   21680|
+|    LA|2024|    2|     4|   33040|
+|    LA|2024|    3|     1|   26853|
+|    LA|2024|    3|     2|   29338|
+|    LA|2024|    3|     3|   26808|
+|    LA|2024|    3|     4|   32787|
+|    LA|2024|    4|     1|   27858|
+|    LA|2024|    4|     2|   26297|
+|    LA|2024|    4|     3|   26332|
+|    LA|2024|    4|     4|   38165|
+|    LA|2024|    5|     1|   26096|
+|    LA|2024|    5|     2|   26606|
+|    LA|2024|    5|     3|   27216|
+|    LA|2024|    5|     4|   39610|
+|    LA|2024|    6|     1|   25923|
+|    LA|2024|    6|     2|   27938|
+|    LA|2024|    6|     3|   28425|
+|    LA|2024|    6|     4|   33736|
+|    LA|2024|    7|     1|   28849|
+|    LA|2024|    7|     2|   30162|
+|    LA|2024|    7|     3|   29814|
+|    LA|2024|    7|     4|   18294|
+|   NYC|2026|    7|     4|  103830|
+|   NYC|2026|    8|     1|   73771|
+|   NYC|2026|    8|     2|   74973|
+|   NYC|2026|    8|     3|   73983|
+|   NYC|2026|    8|     4|  106178|
+|   NYC|2026|    9|     1|   71830|
+|   NYC|2026|    9|     2|   78021|
+|   NYC|2026|    9|     3|   75812|
+|   NYC|2026|    9|     4|   97953|
+|   NYC|2026|   10|     1|   43649|
++------+----+-----+------+--------+
+
+Highest-volume period per city
++------+----+-----+------+--------+
+|source|year|month|period|requests|
++------+----+-----+------+--------+
+|    LA|2024|    1|     4|   40147|
+|   NYC|2026|    8|     4|  106178|
++------+----+-----+------+--------+
+
+Lowest-volume period per city
++------+----+-----+------+--------+
+|source|year|month|period|requests|
++------+----+-----+------+--------+
+|    LA|2024|    7|     4|   18294|
+|   NYC|2026|   10|     1|   43649|
++------+----+-----+------+--------+
+
+Highest-volume period per city (complete periods only)
++------+----+-----+------+--------+
+|source|year|month|period|requests|
++------+----+-----+------+--------+
+|    LA|2024|    1|     4|   40147|
+|   NYC|2026|    8|     4|  106178|
++------+----+-----+------+--------+
+
+Lowest-volume period per city (complete periods only)
++------+----+-----+------+--------+
+|source|year|month|period|requests|
++------+----+-----+------+--------+
+|    LA|2024|    2|     1|   18873|
+|   NYC|2026|    9|     1|   71830|
++------+----+-----+------+--------+
+
+Top 10 ZIP codes per city
++------+-----+------------+--------+
+|source|  zip|zip_requests|zip_rank|
++------+-----+------------+--------+
+|    LA|90026|       19661|       1|
+|    LA|91342|       18691|       2|
+|    LA|90011|       17299|       3|
+|    LA|91331|       17116|       4|
+|    LA|90003|       16270|       5|
+|    LA|90033|       15174|       6|
+|    LA|91335|       14744|       7|
+|    LA|90019|       14106|       8|
+|    LA|90044|       14000|       9|
+|    LA|90731|       13840|      10|
+|   NYC|11226|       13832|       1|
+|   NYC|10457|       10944|       2|
+|   NYC|10453|       10670|       3|
+|   NYC|11201|       10278|       4|
+|   NYC|10452|       10261|       5|
+|   NYC|10467|       10199|       6|
+|   NYC|10458|       10049|       7|
+|   NYC|11385|       10037|       8|
+|   NYC|10456|        9745|       9|
+|   NYC|11207|        9635|      10|
++------+-----+------------+--------+
+
+Top 3 request types in each top-10 ZIP
++------+--------+-----+------------+---------+--------------------------+-------------+----------+
+|source|zip_rank|zip  |zip_requests|type_rank|request_type_original     |type_requests|pct_of_zip|
++------+--------+-----+------------+---------+--------------------------+-------------+----------+
+|LA    |1       |90026|19661       |1        |Graffiti Removal          |8138         |41.39     |
+|LA    |1       |90026|19661       |2        |Bulky Items               |7246         |36.85     |
+|LA    |1       |90026|19661       |3        |Metal/Household Appliances|1129         |5.74      |
+|LA    |2       |91342|18691       |1        |Bulky Items               |8571         |45.86     |
+|LA    |2       |91342|18691       |2        |Graffiti Removal          |4909         |26.26     |
+|LA    |2       |91342|18691       |3        |Metal/Household Appliances|1745         |9.34      |
+|LA    |3       |90011|17299       |1        |Bulky Items               |8166         |47.21     |
+|LA    |3       |90011|17299       |2        |Graffiti Removal          |3209         |18.55     |
+|LA    |3       |90011|17299       |3        |Illegal Dumping Pickup    |1888         |10.91     |
+|LA    |4       |91331|17116       |1        |Bulky Items               |9126         |53.32     |
+|LA    |4       |91331|17116       |2        |Illegal Dumping Pickup    |1937         |11.32     |
+|LA    |4       |91331|17116       |3        |Graffiti Removal          |1704         |9.96      |
+|LA    |5       |90003|16270       |1        |Bulky Items               |6732         |41.38     |
+|LA    |5       |90003|16270       |2        |Illegal Dumping Pickup    |2948         |18.12     |
+|LA    |5       |90003|16270       |3        |Graffiti Removal          |2789         |17.14     |
+|LA    |6       |90033|15174       |1        |Graffiti Removal          |9242         |60.91     |
+|LA    |6       |90033|15174       |2        |Bulky Items               |3462         |22.82     |
+|LA    |6       |90033|15174       |3        |Illegal Dumping Pickup    |599          |3.95      |
+|LA    |7       |91335|14744       |1        |Bulky Items               |7604         |51.57     |
+|LA    |7       |91335|14744       |2        |Graffiti Removal          |2458         |16.67     |
+|LA    |7       |91335|14744       |3        |Metal/Household Appliances|1453         |9.85      |
+|LA    |8       |90019|14106       |1        |Bulky Items               |6722         |47.65     |
+|LA    |8       |90019|14106       |2        |Graffiti Removal          |2830         |20.06     |
+|LA    |8       |90019|14106       |3        |Metal/Household Appliances|1240         |8.79      |
+|LA    |9       |90044|14000       |1        |Bulky Items               |6711         |47.94     |
+|LA    |9       |90044|14000       |2        |Graffiti Removal          |2316         |16.54     |
+|LA    |9       |90044|14000       |3        |Illegal Dumping Pickup    |2227         |15.91     |
+|LA    |10      |90731|13840       |1        |Bulky Items               |7264         |52.49     |
+|LA    |10      |90731|13840       |2        |Graffiti Removal          |2654         |19.18     |
+|LA    |10      |90731|13840       |3        |Metal/Household Appliances|1710         |12.36     |
+|NYC   |1       |11226|13832       |1        |Noise - Residential       |2246         |16.24     |
+|NYC   |1       |11226|13832       |2        |UNSANITARY CONDITION      |1247         |9.02      |
+|NYC   |1       |11226|13832       |3        |Illegal Parking           |1244         |8.99      |
+|NYC   |2       |10457|10944       |1        |Noise - Street/Sidewalk   |1818         |16.61     |
+|NYC   |2       |10457|10944       |2        |Noise - Residential       |1281         |11.71     |
+|NYC   |2       |10457|10944       |3        |UNSANITARY CONDITION      |1102         |10.07     |
+|NYC   |3       |10453|10670       |1        |Noise - Street/Sidewalk   |2505         |23.48     |
+|NYC   |3       |10453|10670       |2        |Noise - Residential       |1209         |11.33     |
+|NYC   |3       |10453|10670       |3        |Illegal Parking           |892          |8.36      |
+|NYC   |4       |11201|10278       |1        |Illegal Parking           |4206         |40.92     |
+|NYC   |4       |11201|10278       |2        |Noise - Residential       |890          |8.66      |
+|NYC   |4       |11201|10278       |3        |Noise - Street/Sidewalk   |838          |8.15      |
+|NYC   |5       |10452|10261       |1        |Noise - Street/Sidewalk   |2036         |19.84     |
+|NYC   |5       |10452|10261       |2        |Noise - Residential       |1038         |10.12     |
+|NYC   |5       |10452|10261       |3        |UNSANITARY CONDITION      |896          |8.73      |
+|NYC   |6       |10467|10199       |1        |Noise - Residential       |1238         |12.14     |
+|NYC   |6       |10467|10199       |2        |Illegal Parking           |1105         |10.83     |
+|NYC   |6       |10467|10199       |3        |Noise - Street/Sidewalk   |1017         |9.97      |
+|NYC   |7       |10458|10049       |1        |Noise - Street/Sidewalk   |1545         |15.37     |
+|NYC   |7       |10458|10049       |2        |Noise - Residential       |1237         |12.31     |
+|NYC   |7       |10458|10049       |3        |Illegal Parking           |922          |9.18      |
+|NYC   |8       |11385|10037       |1        |Illegal Parking           |2407         |23.98     |
+|NYC   |8       |11385|10037       |2        |Blocked Driveway          |885          |8.82      |
+|NYC   |8       |11385|10037       |3        |Noise - Residential       |673          |6.71      |
+|NYC   |9       |10456|9745        |1        |Noise - Residential       |2138         |21.94     |
+|NYC   |9       |10456|9745        |2        |Noise - Street/Sidewalk   |1489         |15.28     |
+|NYC   |9       |10456|9745        |3        |UNSANITARY CONDITION      |802          |8.23      |
+|NYC   |10      |11207|9635        |1        |Noise - Residential       |1107         |11.49     |
+|NYC   |10      |11207|9635        |2        |Illegal Parking           |1069         |11.09     |
+|NYC   |10      |11207|9635        |3        |UNSANITARY CONDITION      |643          |6.67      |
++------+--------+-----+------------+---------+--------------------------+-------------+----------+
+
+Average and median resolution time (hours) per city
++------+------------------+--------------------+-----------------------+
+|source|completed_requests|avg_resolution_hours|median_resolution_hours|
++------+------------------+--------------------+-----------------------+
+|    LA|            728135|              229.43|                  46.53|
+|   NYC|            715268|               89.26|                   4.74|
++------+------------------+--------------------+-----------------------+
+
+Top 5 request types by average resolution time, per city
++------+---------+--------------------------+--------+--------------------+
+|source|type_rank|request_type_original     |requests|avg_resolution_hours|
++------+---------+--------------------------+--------+--------------------+
+|LA    |1        |Single Streetlight Issue  |7872    |4031.7              |
+|LA    |2        |Multiple Streetlight Issue|8375    |3380.1              |
+|LA    |3        |Homeless Encampment       |33710   |1505.48             |
+|LA    |4        |Illegal Dumping Pickup    |55923   |174.23              |
+|LA    |5        |Bulky Items               |364522  |84.74               |
+|NYC   |1        |Calorie Labeling          |1       |1440.29             |
+|NYC   |2        |Mobile Food Vendor        |153     |1440.26             |
+|NYC   |3        |Tattooing                 |12      |1440.24             |
+|NYC   |4        |Poison Ivy                |18      |1366.86             |
+|NYC   |5        |Food Establishment        |843     |1178.77             |
++------+---------+--------------------------+--------+--------------------+
+
+Requests per status, by city
++------+---------+--------+-----+
+|source|status   |requests|pct  |
++------+---------+--------+-----+
+|LA    |closed   |730126  |91.27|
+|LA    |cancelled|34725   |4.34 |
+|LA    |open     |34053   |4.26 |
+|LA    |other    |1096    |0.14 |
+|NYC   |closed   |715881  |89.49|
+|NYC   |open     |84112   |10.51|
+|NYC   |NULL     |7       |0.00 |
++------+---------+--------+-----+
+
+Most common status per city
++------+------+--------+-----+
+|source|status|requests|pct  |
++------+------+--------+-----+
+|LA    |closed|730126  |91.27|
+|NYC   |closed|715881  |89.49|
++------+------+--------+-----+
+
+Requests per channel, by city
++------+-------+--------+-----+
+|source|channel|requests|pct  |
++------+-------+--------+-----+
+|LA    |Phone  |314676  |39.33|
+|LA    |Mobile |277390  |34.67|
+|LA    |Online |129997  |16.25|
+|LA    |Other  |77937   |9.74 |
+|NYC   |Online |419261  |52.41|
+|NYC   |Phone  |163519  |20.44|
+|NYC   |Mobile |150744  |18.84|
+|NYC   |NULL   |65687   |8.21 |
+|NYC   |Other  |789     |0.10 |
++------+-------+--------+-----+
+
+Most common channel per city
++------+-------+--------+-----+
+|source|channel|requests|pct  |
++------+-------+--------+-----+
+|LA    |Phone  |314676  |39.33|
+|NYC   |Online |419261  |52.41|
++------+-------+--------+-----+
+
